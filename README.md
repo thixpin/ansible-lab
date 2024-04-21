@@ -17,7 +17,8 @@ And this lab is running with docker-compose.
 
 ### How to access the containers
 1. Run `docker exec -it -u ubuntu control_node bash` to access the control node
-3. Run `docker exec -it -u ubuntu target_node bash` to access the target node
+2. Run `docker exec -it web_node1 bash` to access the web_node1
+3. Run `docker exec -it web_node1 ls -la /usr/share/nginx/html` to list the files in the web_node1's html directory
 
 
 # Let's start the labs
