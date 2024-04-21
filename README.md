@@ -24,8 +24,8 @@ And this lab is running with docker-compose.
 # Let's start the labs
 
 ## Lab 1 - Install ansible on ubuntu
-1. Access the install_node container `docker exec -it -u ubuntu install_node bash`
-2. Install ansible in the install_node container
+1. Access the control_node container `docker exec -it -u ubuntu control_node bash`
+2. Install ansible in the control_node container
     ```bash
     sudo apt-get install software-properties-common -y
     sudo apt-add-repository ppa:ansible/ansible -y 
