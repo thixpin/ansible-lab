@@ -9,7 +9,7 @@ And this lab is running with docker-compose.
 ### How to run
 1. Clone this repository
 2. Run `cd ansible-lab`
-3. Run `ssh-keygen -t ed25519 -f playbooks/sshkey' to generate a new ssh keypair in the ssh directory
+3. Run `ssh-keygen -t ed25519 -f playbooks/sshkey` to generate a new ssh keypair in the ssh directory
 4. Run `touch authorized_keys` to create an authorized_keys file
 5. Run `cat playbooks/sshkey.pub >> authorized_keys` to add the public key to the authorized_keys file
 6. Run `docker-compose build`
@@ -183,3 +183,4 @@ Write a playbook to create a file on node01 with a specific text content at /opt
         dest: /usr/share/nginx/html/file.txt
         content: "This file is created by Ansible!"
 ```
+
