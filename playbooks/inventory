@@ -1,0 +1,39 @@
+# Web Servers
+
+# Located in Yangon
+web_node1 ansible_host=172.20.0.11 ansible_user=root 
+
+# Located in Mandalay
+web_node2 ansible_host=172.20.0.12 ansible_user=root
+
+
+# Database Servers
+
+# Located in Yangon
+db_node1  ansible_host=172.20.0.13 ansible_user=root
+
+
+
+[web_nodes]
+web_node1
+web_node2
+
+[db_nodes]
+db_node1
+
+[all_servers:children]
+web_nodes
+db_nodes
+
+[ygn_nodes]
+web_node1
+db_node1
+
+[mdy_nodes]
+web_node2
+
+[myanmar_nodes:children]
+ygn_nodes
+mdy_nodes
+
+
