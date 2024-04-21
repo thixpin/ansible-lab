@@ -30,9 +30,6 @@ services:
         ipv4_address: 172.20.0.11
 
   web_node2:
-    build:
-      context: .
-      dockerfile: dockerfiles/nginx.dockerfile  # Path to the Dockerfile
     image: nginx-ssh
     container_name: web_node2
     volumes:
