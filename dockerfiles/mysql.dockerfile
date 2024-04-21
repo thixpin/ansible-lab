@@ -1,4 +1,4 @@
-FROM mysql:8.3.0
+FROM mysql:latest
 
 LABEL maintainer="Soe Thura <thixpin@gmail.com>"
 LABEL description="This is a Dockerfile to use as database server node for Ansible."
@@ -15,4 +15,4 @@ RUN mkdir -p /root/.ssh && \
     ssh-keygen -A
 
 # Run sshd and mysql in the foreground
-CMD ["sh", "-c", "/usr/sbin/sshd -D; mysqld"]
+CMD ["sh", "-c", "/usr/sbin/sshd &&  mysqld"]
