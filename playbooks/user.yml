@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: Create a user with specific UID
+      user:
+        name: devops
+        uid: 2000
+        group: sudo
+        state: present
+        
+    - name: Allow devops user to run sudo commands without password
+      lineinfile:
+        path: /etc/sudoers
+        line: 'devops ALL=(ALL) NOPASSWD: ALL'

@@ -1,0 +1,9 @@
+---
+- hosts: web_node1
+  become: true
+  tasks:
+    - name: Create a file using a template
+      template:
+        src: templates/hello.txt.j2
+        dest: /usr/share/nginx/html/hello.txt
+        remote_src: no

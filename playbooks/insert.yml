@@ -1,0 +1,9 @@
+---
+- hosts: web_node1
+  become: true
+  tasks:
+    - name: Insert a line into a file
+      lineinfile:
+        path: /usr/share/nginx/html/file.txt
+        line: 'This line is inserted by Ansible'
+        insertbefore: BOF

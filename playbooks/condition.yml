@@ -1,0 +1,15 @@
+---
+- name: 'Am I a DevOps or not?'
+  hosts: localhost
+  connection: local
+  vars:
+    user: devops
+  tasks:
+    - name: 'Check if I am a DevOps'
+      debug:
+        msg: 'I am a DevOps'
+      when: user == "devops"
+    - name: 'Check if I am not a DevOps'
+      debug:
+        msg: 'I am not a DevOps'
+      when: user != "devops"

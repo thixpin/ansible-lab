@@ -1,0 +1,8 @@
+---
+- hosts: web_nodes
+  become: true
+  tasks:
+    - name: Install htop package
+      apk:
+        name: htop
+        state: present

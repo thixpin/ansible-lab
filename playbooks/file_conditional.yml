@@ -1,0 +1,23 @@
+---
+- hosts: web_nodes
+  become: true
+  tasks:
+    - name: Copy file with owner, group, and permissions on web_node1
+      copy:
+        src: /usr/share/nginx/html/file.txt
+        dest: /usr/share/nginx/html/new-file.txt
+        remote_src: yes
+        owner: nginx
+        group: nginx
+        mode: '0755'
+      when: inventory_hostname == 'web_node1'
+      
+    - name: Copy file with owner, group, and permissions on web_node2
+      copy:
+        src: /usr/share/nginx/html/file.txt
+        dest: /usr/share/nginx/html/new-file.txt
+        remote_src: yes
+        owner: nginx
+        group: nginx
+        mode: '0400'
+      when: inventory_hostname == 'web_node2'
