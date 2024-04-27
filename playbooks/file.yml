@@ -1,8 +1,8 @@
 ---
-- hosts: web_node1
+- hosts: web_nodes
   become: true
   tasks:
     - name: create a file
       copy:
         dest: /usr/share/nginx/html/file.txt
-        content: "This file is created by Ansible!"
+        content: "This file is created with Ansible by KT"
