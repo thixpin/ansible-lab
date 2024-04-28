@@ -10,8 +10,8 @@ RUN apt-get update && \
     apt-get clean
 
 # Add the new user and set bash as the default shell for the user, set the home directory, add the user to the sudo group
-RUN useradd -m -s /bin/bash ubuntu && \
-    usermod -aG sudo ubuntu && \
+# RUN useradd -m -s /bin/bash ubuntu && \
+RUN usermod -aG sudo ubuntu && \
     mkdir -p /home/ubuntu/.ssh && \
     chown -R ubuntu:ubuntu /home/ubuntu/ && \
     chmod 700 /home/ubuntu/.ssh && \
