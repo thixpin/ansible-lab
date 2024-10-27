@@ -37,6 +37,20 @@ services:
     networks:
       ansible_lab_network:
         ipv4_address: 172.20.0.12
+    
+  db_base:
+    image: mysql:latest
+    container_name: db_base
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ansible_lab
+      MYSQL_USER: ansible_user
+      MYSQL_PASSWORD: ansible_db_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      ansible_lab_network:
+        ipv4_address: 172.20.0.15
 
   db_node1:
     build:
@@ -45,6 +59,8 @@ services:
     image: mysql-ssh
     container_name: db_node1
     platform: linux/x86_64
+    depends_on:
+      - db_base
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ansible_lab
